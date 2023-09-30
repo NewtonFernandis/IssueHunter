@@ -1,10 +1,10 @@
-import { Button, ButtonGroup } from '@mui/joy'
+import { Button, ButtonGroup } from "@mui/joy";
 
 type Props = {
-  prevPage: () => void
-  currentPage: number
-  nextPage: () => void
-}
+  prevPage: () => void;
+  currentPage: number;
+  nextPage: () => void;
+};
 export default function Pagination({
   prevPage,
   currentPage,
@@ -18,14 +18,11 @@ export default function Pagination({
          z-10 shadow-lg"
     >
       <ButtonGroup aria-label="outlined primary button group">
-        <Button
-          onClick={prevPage}
-          disabled={currentPage === 1}
-        >
+        <Button onClick={prevPage} disabled={currentPage === 1}>
           Previous Page
         </Button>
         <Button onClick={nextPage}>Next Page</Button>
       </ButtonGroup>
     </div>
-  )
+  );
 }
