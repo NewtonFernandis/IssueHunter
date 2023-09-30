@@ -1,4 +1,4 @@
-import { Button, ButtonGroup } from "@mui/joy";
+import { Button, ButtonGroup } from '@mui/joy';
 
 type Props = {
   prevPage: () => void;

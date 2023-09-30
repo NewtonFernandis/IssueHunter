@@ -1,5 +1,5 @@
-import { Octokit } from "@octokit/core";
-import { SearchIssuesResponse } from "../types/searchIssueResponse";
+import { Octokit } from '@octokit/core';
+import { SearchIssuesResponse } from '../types/searchIssueResponse';
 const octokit = new Octokit({
   auth: import.meta.env.GITHUB_PERSONAL_ACCESS_TOKEN,
   request: {
@@ -8,9 +8,9 @@ const octokit = new Octokit({
 });
 
 export const githubApi = {
-  getAllIssues: async (searchQuery: string, page: number): Promise<any> => {
+  getAllIssues: async (searchQuery: string, page: number) => {
     try {
-      return await octokit.request("GET /search/issues", {
+      return await octokit.request('GET /search/issues', {
         q: searchQuery,
         per_page: 20,
         page: page,

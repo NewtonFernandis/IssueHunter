@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@mui/joy";
-import moment from "moment";
-import { Issue } from "../types/searchIssueResponse";
+import { Card, CardContent } from '@mui/joy';
+import moment from 'moment';
+import { Issue } from '../types/searchIssueResponse';
 
 type Props = {
   issue: Issue;
@@ -12,17 +12,17 @@ export default function IssueCard({ issue }: Props): JSX.Element {
         <h3 className="text-lg font-medium mb-2 truncate">{issue.title}</h3>
 
         <p className="text-gray-600">
-          <strong>Created By:</strong> {issue.user.login}{" "}
+          <strong>Created By:</strong> {issue.user.login}{' '}
           {moment(issue.created_at).fromNow()}
         </p>
 
         <p className="text-gray-600">
-          <strong>Assignee:</strong>{" "}
-          {issue.assignee ? issue.assignee.login : "Unassigned"}
+          <strong>Assignee:</strong>{' '}
+          {issue.assignee ? issue.assignee.login : 'Unassigned'}
         </p>
 
         <p className="text-gray-600">
-          <strong>Status:</strong> {issue.state === "open" ? "Open" : "Closed"}
+          <strong>Status:</strong> {issue.state === 'open' ? 'Open' : 'Closed'}
         </p>
 
         <p className="text-gray-600">
@@ -34,7 +34,7 @@ export default function IssueCard({ issue }: Props): JSX.Element {
         </p>
 
         <p className="text-gray-600">
-          {issue.labels.map((label) => (
+          {issue.labels.map(label => (
             <a
               key={label.id}
               className="bg-gray-200 text-gray-800 rounded-full text-xs px-2 py-1 mr-1"

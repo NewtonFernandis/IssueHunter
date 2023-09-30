@@ -5,19 +5,19 @@ import {
   RadioGroup,
   Switch,
   Typography,
-} from "@mui/joy";
-import Autocomplete from "@mui/joy/Autocomplete";
-import { useFormik } from "formik";
-import { labels, languages } from "../utils/constants";
+} from '@mui/joy';
+import Autocomplete from '@mui/joy/Autocomplete';
+import { useFormik } from 'formik';
+import { labels, languages } from '../utils/constants';
 export default function Filters(): JSX.Element {
   const formik = useFormik({
     initialValues: {
       languages: [] as string[],
       labels: [] as string[],
       unassigned: false,
-      state: "all",
+      state: 'all',
     },
-    onSubmit: (values) => {
+    onSubmit: values => {
       console.log(values);
     },
   });
@@ -29,11 +29,11 @@ export default function Filters(): JSX.Element {
       <form onSubmit={formik.handleSubmit} className="flex flex-col">
         <FormLabel
           sx={{
-            fontSize: "14px",
+            fontSize: '14px',
             fontWeight: 500,
             lineHeight: 1.75,
-            letterSpacing: "0.02857em",
-            marginBottom: "0.2rem",
+            letterSpacing: '0.02857em',
+            marginBottom: '0.2rem',
           }}
           htmlFor="tags-default"
         >
@@ -41,27 +41,27 @@ export default function Filters(): JSX.Element {
         </FormLabel>
         <Autocomplete
           sx={{
-            marginBottom: "1rem",
+            marginBottom: '1rem',
           }}
           multiple
           name="language"
           id="tags-default"
           placeholder="Filter by language"
           options={languages}
-          getOptionLabel={(option) => option.label}
+          getOptionLabel={option => option.label}
           isOptionEqualToValue={(option, value) => option.value === value.value}
           onChange={(e, value) => {
-            const values = value.map((v) => v.value);
-            formik.setFieldValue("languages", values);
+            const values = value.map(v => v.value);
+            formik.setFieldValue('languages', values);
           }}
         />
         <FormLabel
           sx={{
-            fontSize: "14px",
+            fontSize: '14px',
             fontWeight: 500,
             lineHeight: 1.75,
-            letterSpacing: "0.02857em",
-            marginBottom: "0.2rem",
+            letterSpacing: '0.02857em',
+            marginBottom: '0.2rem',
           }}
           htmlFor="tags-default"
         >
@@ -69,29 +69,29 @@ export default function Filters(): JSX.Element {
         </FormLabel>
         <Autocomplete
           sx={{
-            marginBottom: "1rem",
+            marginBottom: '1rem',
           }}
           multiple
           name="labels"
           id="tags-default"
           placeholder="Filter by label"
           options={labels}
-          getOptionLabel={(option) => option.label}
+          getOptionLabel={option => option.label}
           isOptionEqualToValue={(option, value) => option.value === value.value}
           onChange={(e, value) => {
-            const values = value.map((v) => v.value);
-            formik.setFieldValue("labels", values);
+            const values = value.map(v => v.value);
+            formik.setFieldValue('labels', values);
           }}
         />
 
         <Typography
           sx={{
-            marginBottom: "1rem",
+            marginBottom: '1rem',
           }}
           endDecorator={
             <Switch
-              onChange={(e) => {
-                formik.setFieldValue("unassigned", e.target.checked);
+              onChange={e => {
+                formik.setFieldValue('unassigned', e.target.checked);
               }}
               sx={{
                 ml: 1,
@@ -104,11 +104,11 @@ export default function Filters(): JSX.Element {
 
         <FormLabel
           sx={{
-            fontSize: "14px",
+            fontSize: '14px',
             fontWeight: 500,
             lineHeight: 1.75,
-            letterSpacing: "0.02857em",
-            marginBottom: "0.2rem",
+            letterSpacing: '0.02857em',
+            marginBottom: '0.2rem',
           }}
           htmlFor="tags-default"
         >
@@ -119,10 +119,10 @@ export default function Filters(): JSX.Element {
           name="state"
           orientation="horizontal"
           sx={{
-            marginBottom: "1rem",
+            marginBottom: '1rem',
           }}
-          onChange={(e) => {
-            formik.setFieldValue("state", e.target.value);
+          onChange={e => {
+            formik.setFieldValue('state', e.target.value);
           }}
         >
           <Radio value="all" label="All" variant="outlined" />
@@ -139,7 +139,7 @@ export default function Filters(): JSX.Element {
       <Divider sx={{ my: 2 }} />
 
       <div className="absolute bottom-0 p-2 text-gray-500">
-        Made with ❤️ by{" "}
+        Made with ❤️ by{' '}
         <a className="text-purple-600 hover:text-purple-500" href="">
           Newton Fernandis
         </a>

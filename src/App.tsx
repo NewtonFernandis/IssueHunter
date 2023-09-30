@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
-import Filters from "./components/filters.component";
-import IssueCard from "./components/issueCard.component";
-import NavBar from "./components/navbar.component";
-import Pagination from "./components/pagination.component";
-import Spinner from "./components/spinner.component";
-import { Issue } from "./types/searchIssueResponse";
-import { githubApi } from "./utils/api";
+import React, { useEffect, useState } from 'react';
+import Filters from './components/filters.component';
+import IssueCard from './components/issueCard.component';
+import NavBar from './components/navbar.component';
+import Pagination from './components/pagination.component';
+import Spinner from './components/spinner.component';
+import { Issue } from './types/searchIssueResponse';
+import { githubApi } from './utils/api';
 function App() {
   const [issues, setIssues] = useState<Issue[] | undefined>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const searchQuery = "is:issue is:open";
+  const searchQuery = 'is:issue is:open';
 
   useEffect(() => {
     getIssues(currentPage);
@@ -51,7 +51,7 @@ function App() {
         {!loading ? (
           <div className="grid grid-cols-2 gap-2">
             {issues &&
-              issues.map((issue) => (
+              issues.map(issue => (
                 <div key={issue.id} className="w-full">
                   <IssueCard issue={issue} />
                 </div>

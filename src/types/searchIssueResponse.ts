@@ -19,7 +19,7 @@ export interface Issue {
   title: string; // Issue title
   user: User; // User who created the issue
   labels: Label[]; // Labels associated with the issue
-  state: "open" | "closed"; // State of the issue (open or closed)
+  state: 'open' | 'closed'; // State of the issue (open or closed)
   locked: boolean; // Indicates if the issue is locked
   assignee: User | null; // User assigned to the issue (null if unassigned)
   assignees: User[]; // Users assigned to the issue
@@ -58,7 +58,7 @@ interface Milestone {
   id: number; // Milestone ID
   node_id: string; // Node ID of the milestone
   number: number; // Milestone number
-  state: "open" | "closed"; // State of the milestone (open or closed)
+  state: 'open' | 'closed'; // State of the milestone (open or closed)
   title: string; // Milestone title
   description: string | null; // Description of the milestone (null if not provided)
   creator: User; // User who created the milestone
