@@ -2,6 +2,7 @@
 
 IssueHunter is the ultimate GitHub issue search wizard! It's like having your own personal issue-hunting sidekick, here to help you search for GitHub issues with ninja-like efficiency. Whether you're a coding wizard or a project management sorcerer, IssueHunter's got your back!
 
+![IssueHunter](./src/assets/readme/issueHunter.png)
 
 ## Features
 
@@ -74,14 +75,7 @@ Absolutely! Here's the modified "Contributing" section to mention the existence 
 
 Ready to join our magical GitHub issue-finding quest? Fantastic! We've conjured up a guide for contributors in the [CONTRIBUTING.md](CONTRIBUTING.md) file. Whether you've got wild ideas or tiny enchantments, open an issue or cast a pull request spell. Check out the [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get started.
 
-
 Feel free to share your thoughts and collaborate with us. We welcome your contributions with open arms! 🪄🌟
-
-
-
-
-
-
 
 ## License
 
