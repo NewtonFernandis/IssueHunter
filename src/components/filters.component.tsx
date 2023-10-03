@@ -74,7 +74,7 @@ export default function Filters({ setSearchQuery }: FiltersProps): JSX.Element {
           options={languages}
           getOptionLabel={option => option.label}
           isOptionEqualToValue={(option, value) => option.value === value.value}
-          onChange={(e, value) => {
+          onChange={(_, value) => {
             const values = value.map(v => v.value);
             formik.setFieldValue('languages', values);
           }}
@@ -102,7 +102,7 @@ export default function Filters({ setSearchQuery }: FiltersProps): JSX.Element {
           options={labels}
           getOptionLabel={option => option.label}
           isOptionEqualToValue={(option, value) => option.value === value.value}
-          onChange={(e, value) => {
+          onChange={(_, value) => {
             const values = value.map(v => v.value);
             formik.setFieldValue('labels', values);
           }}
