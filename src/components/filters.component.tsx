@@ -7,9 +7,14 @@ import {
   Typography,
 } from '@mui/joy';
 import Autocomplete from '@mui/joy/Autocomplete';
-import { useFormik } from 'formik';
+import { FormikValues, useFormik } from 'formik';
 import { labels, languages } from '../utils/constants';
-export default function Filters(): JSX.Element {
+
+type FiltersProps = {
+  setSearchQuery: (query: string) => void;
+};
+
+export default function Filters({ setSearchQuery }: FiltersProps): JSX.Element {
   const formik = useFormik({
     initialValues: {
       languages: [] as string[],
@@ -18,9 +23,28 @@ export default function Filters(): JSX.Element {
       state: 'all',
     },
     onSubmit: values => {
-      console.log(values);
+      applyFilters(values);
     },
   });
+
+  const applyFilters = (values: FormikValues) => {
+    let query = '';
+    if (values.languages.length > 0) {
+      query += ` language:${values.languages.join(',')}`;
+    }
+    if (values.labels.length > 0) {
+      query += ` label:${values.labels.join(',')}`;
+    }
+    if (values.unassigned) {
+      query += ` no:assignee`;
+    }
+    if (values.state !== 'all') {
+      query += ` state:${values.state}`;
+    }
+
+    const queryString = 'is:issue is:open' + query;
+    setSearchQuery(queryString);
+  };
 
   return (
     <div className=" overflow-hidden ml-2 p-6  h-[90%] w-[350px] fixed   border-2 border-purple-400 rounded-lg">

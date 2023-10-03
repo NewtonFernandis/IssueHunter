@@ -10,12 +10,11 @@ function App() {
   const [issues, setIssues] = useState<Issue[] | undefined>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
-
-  const searchQuery = 'is:issue is:open';
+  const [searchQuery, setSearchQuery] = useState<string>('is:issue is:open');
 
   useEffect(() => {
     getIssues(currentPage);
-  }, [currentPage]);
+  }, [currentPage, searchQuery]);
 
   const getIssues = async (page: number) => {
     try {
@@ -45,7 +44,7 @@ function App() {
   return (
     <React.Fragment>
       <NavBar />
-      <Filters />
+      <Filters setSearchQuery={setSearchQuery} />
 
       <div className="ml-[365px] relative h-screen">
         {!loading ? (

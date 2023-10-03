@@ -31,6 +31,8 @@ export const languages = [
   { label: 'Angular', value: 'angular' },
 ];
 export const labels = [
+  { label: 'hacktoberfest', value: 'hacktoberfest' },
+  { label: 'hacktoberfest-accepted', value: 'hacktoberfest-accepted' },
   { label: 'good first issue', value: 'good-first-issue' },
   { label: 'help wanted', value: 'help-wanted' },
   { label: 'documentation', value: 'documentation' },
