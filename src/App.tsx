@@ -14,6 +14,7 @@ function App() {
 
   useEffect(() => {
     getIssues(currentPage);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, searchQuery]);
 
   const getIssues = async (page: number) => {
@@ -21,7 +22,8 @@ function App() {
       setLoading(true);
       const response = await githubApi.getAllIssues(searchQuery, page);
       if (response) {
-        const issues: Issue[] = response?.data.items;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const issues: any[] = response?.data.items;
         setIssues(issues);
       }
       setLoading(false);
