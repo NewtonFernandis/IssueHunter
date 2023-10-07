@@ -48,4 +48,5 @@ export const labels = [
   { label: 'high priority', value: 'high-priority' },
   { label: 'low priority', value: 'low-priority' },
   { label: 'awaiting review', value: 'awaiting-review' },
+  { label: 'bounty', value: 'bounty' }
 ];
