@@ -33,16 +33,18 @@ export default function IssueCard({ issue }: Props): JSX.Element {
           <strong>Updated:</strong> {moment(issue.updated_at).fromNow()}
         </p>
 
-        <p className="text-gray-600">
-          {issue.labels.map(label => (
-            <a
-              key={label.id}
-              className="bg-gray-200 text-gray-800 rounded-full text-xs px-2 py-1 mr-1"
-            >
-              {label.name}
-            </a>
-          ))}
-        </p>
+        {issue.labels.length != 0 && (
+          <p className="chip-row text-gray-600">
+            {issue.labels.map(label => (
+              <a
+                key={label.id}
+                className="bg-gray-200 text-gray-800 rounded-full text-xs px-2 py-1 mr-1"
+              >
+                {label.name}
+              </a>
+            ))}
+          </p>
+        )}
       </div>
       <CardContent orientation="horizontal">
         <a
