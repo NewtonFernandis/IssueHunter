@@ -1,8 +1,24 @@
 # IssueHunter
+   ![License](https://img.shields.io/github/license/NewtonFernandis/IssueHunter)
+   ![GitHub stars](https://img.shields.io/github/stars/NewtonFernandis/IssueHunter)
+   ![GitHub forks](https://img.shields.io/github/forks/NewtonFernandis/IssueHunter)
+   ![GitHub issues](https://img.shields.io/github/issues/NewtonFernandis/IssueHunter)
+   ![GitHub pull requests](https://img.shields.io/github/issues-pr/NewtonFernandis/IssueHunter)
+   ![GitHub last commit](https://img.shields.io/github/last-commit/NewtonFernandis/IssueHunter)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/NewtonFernandis/IssueHunter)
+![GitHub contributors](https://img.shields.io/github/contributors/NewtonFernandis/IssueHunter)
+![GitHub issues](https://img.shields.io/github/issues-closed/NewtonFernandis/IssueHunter)
+![GitHub language count](https://img.shields.io/github/languages/count/NewtonFernandis/IssueHunter)
 
 IssueHunter is a powerful GitHub issue search tool designed to streamline your issue-hunting process. Whether you're a coding wizard or a project management sorcerer, IssueHunter is here to assist you in discovering GitHub issues with remarkable efficiency.
 
 ![IssueHunter](./src/assets/readme/issueHunter.png)
+
+ 
+
+
+ 
+
 
 ## Key Features
 
