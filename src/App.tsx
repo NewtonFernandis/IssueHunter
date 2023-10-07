@@ -48,7 +48,7 @@ function App() {
       <NavBar />
       <Filters setSearchQuery={setSearchQuery} />
 
-      <div className="ml-[365px] relative h-screen">
+      <div className="ml-[365px] relative h-full">
         {!loading ? (
           <div className="grid grid-cols-2 gap-2">
             {issues &&
