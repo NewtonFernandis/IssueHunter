@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Filters from './components/filters.component';
 import IssueCard from './components/issueCard.component';
 import NavBar from './components/navbar.component';
@@ -6,11 +6,15 @@ import Pagination from './components/pagination.component';
 import Spinner from './components/spinner.component';
 import { Issue } from './types/searchIssueResponse';
 import { githubApi } from './utils/api';
+import { useTheme } from './contexts/ThemeContext';
+
+
 function App() {
   const [issues, setIssues] = useState<Issue[] | undefined>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>('is:issue is:open');
+  const {darkMode} = useTheme();
 
   useEffect(() => {
     getIssues(currentPage);
@@ -44,12 +48,12 @@ function App() {
   };
 
   return (
-    <React.Fragment>
+    <div className={`${darkMode ? "dark" : "light"}`}>
       <NavBar />
       <Filters setSearchQuery={setSearchQuery} />
-      <div className="lg:ml-[365px] relative h-full mt-2 p-2">
+      <div className="lg:ml-[365px] relative h-full mt-2 p-2 dark:bg-dark">
         {!loading ? (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 dark:bg-dark">
             {issues &&
               issues.map(issue => (
                 <div key={issue.id} className="w-full">
@@ -66,7 +70,7 @@ function App() {
         currentPage={currentPage}
         nextPage={nextPage}
       />
-    </React.Fragment>
+    </div>
   );
 }
 

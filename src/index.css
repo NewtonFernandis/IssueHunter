@@ -3,9 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
   font-family: 'Poppins', sans-serif;
+}
+.light{
   background-color: #f5f5f5;
+}
+.dark{
+  background-color: #282936;
 }
 
 .chip-row {

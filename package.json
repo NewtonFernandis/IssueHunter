@@ -18,7 +18,8 @@
     "formik": "^2.4.5",
     "moment": "^2.29.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-toggle-dark-mode": "^1.1.1"
   },
   "devDependencies": {
     "@types/node": "^20.6.4",
@@ -45,8 +46,8 @@
     "typescript": "^5.2.2",
     "vite": "^4.4.5"
   },
-    "lint-staged": {
-      "**/*": "prettier --write --ignore-unknown",
-      "*.{js,jsx,ts,tsx}": "eslint --fix"
-    }
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown",
+    "*.{js,jsx,ts,tsx}": "eslint --fix"
+  }
 }
