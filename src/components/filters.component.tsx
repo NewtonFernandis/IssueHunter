@@ -47,7 +47,7 @@ export default function Filters({ setSearchQuery }: FiltersProps): JSX.Element {
   };
 
   return (
-    <div className=" overflow-hidden mx-auto lg:ml-2 p-6 lg:h-[88%] lg:fixed w-[98%] lg:w-[350px]  border-2 border-purple-400 rounded-lg">
+    <div className="relative overflow-hidden mx-auto lg:ml-2 p-6 lg:h-[88%] lg:fixed w-[98%] lg:w-[350px]  border-2 border-purple-400 rounded-lg">
       <p className="text-2xl mb-4">Filters</p>
       <form onSubmit={formik.handleSubmit} className="flex flex-col">
         <FormLabel
