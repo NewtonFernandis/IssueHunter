@@ -9,7 +9,7 @@ export default function IssueCard({ issue }: Props): JSX.Element {
   return (
     <Card className="mb-2 h-64">
       <div>
-        <h3 className="text-lg font-medium mb-2 truncate">{issue.title}</h3>
+        <h3 className="text-lg font-bold mb-2 truncate ">{issue.title}</h3>
 
         <p className="text-gray-600">
           <strong>Created By:</strong> {issue.user.login}{' '}
