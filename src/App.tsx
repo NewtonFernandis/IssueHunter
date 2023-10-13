@@ -47,10 +47,9 @@ function App() {
     <React.Fragment>
       <NavBar />
       <Filters setSearchQuery={setSearchQuery} />
-
-      <div className="ml-[365px] relative h-full">
+      <div className="lg:ml-[365px] relative h-full mt-2 p-2">
         {!loading ? (
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
             {issues &&
               issues.map(issue => (
                 <div key={issue.id} className="w-full">
@@ -61,13 +60,12 @@ function App() {
         ) : (
           <Spinner />
         )}
-
-        <Pagination
-          prevPage={prevPage}
-          currentPage={currentPage}
-          nextPage={nextPage}
-        />
       </div>
+      <Pagination
+        prevPage={prevPage}
+        currentPage={currentPage}
+        nextPage={nextPage}
+      />
     </React.Fragment>
   );
 }
