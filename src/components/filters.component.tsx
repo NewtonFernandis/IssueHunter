@@ -47,7 +47,7 @@ export default function Filters({ setSearchQuery }: FiltersProps): JSX.Element {
   };
 
   return (
-    <div className="relative overflow-hidden mx-auto lg:ml-2 p-6 lg:h-[88%] lg:fixed w-[98%] lg:w-[350px]  border-2 border-purple-400 rounded-lg">
+    <div className="relative overflow-hidden mx-auto lg:ml-2 p-6 lg:h-[88%] lg:fixed w-[98%] lg:w-[350px]  border-2 border-purple-400 rounded-lg dark:bg-dark dark:text-light">
       <p className="text-2xl mb-4">Filters</p>
       <form onSubmit={formik.handleSubmit} className="flex flex-col">
         <FormLabel
@@ -58,6 +58,7 @@ export default function Filters({ setSearchQuery }: FiltersProps): JSX.Element {
             letterSpacing: '0.02857em',
             marginBottom: '0.2rem',
           }}
+          className="dark:text-gray-300"
           htmlFor="tags-default"
         >
           Filter by language
@@ -86,6 +87,7 @@ export default function Filters({ setSearchQuery }: FiltersProps): JSX.Element {
             letterSpacing: '0.02857em',
             marginBottom: '0.2rem',
           }}
+          className="dark:text-gray-300"
           htmlFor="tags-default"
         >
           Filter by label
@@ -111,6 +113,7 @@ export default function Filters({ setSearchQuery }: FiltersProps): JSX.Element {
           sx={{
             marginBottom: '1rem',
           }}
+          className="dark:text-gray-300"
           endDecorator={
             <Switch
               onChange={e => {
@@ -133,6 +136,7 @@ export default function Filters({ setSearchQuery }: FiltersProps): JSX.Element {
             letterSpacing: '0.02857em',
             marginBottom: '0.2rem',
           }}
+          className="dark:text-gray-300"
           htmlFor="tags-default"
         >
           State
@@ -148,9 +152,24 @@ export default function Filters({ setSearchQuery }: FiltersProps): JSX.Element {
             formik.setFieldValue('state', e.target.value);
           }}
         >
-          <Radio value="all" label="All" variant="outlined" />
-          <Radio value="open" label="Open" variant="outlined" />
-          <Radio value="closed" label="Closed" variant="outlined" />
+          <Radio
+            className="dark:text-gray-300"
+            value="all"
+            label="All"
+            variant="outlined"
+          />
+          <Radio
+            className="dark:text-gray-300"
+            value="open"
+            label="Open"
+            variant="outlined"
+          />
+          <Radio
+            className="dark:text-gray-300"
+            value="closed"
+            label="Closed"
+            variant="outlined"
+          />
         </RadioGroup>
         <button
           type="submit"
