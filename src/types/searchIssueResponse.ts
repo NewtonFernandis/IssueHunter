@@ -30,6 +30,11 @@ export interface Issue {
   closed_at: string | null; // Date and time when the issue was closed (null if open)
   body: string; // Issue description or body
   reactions: Reactions; // Reactions on the issue
+  repository: Repository;
+}
+
+interface Repository {
+  html_url: string; // URL of the repository
 }
 
 interface User {

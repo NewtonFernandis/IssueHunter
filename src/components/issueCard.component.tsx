@@ -57,7 +57,7 @@ export default function IssueCard({ issue }: Props): JSX.Element {
         </a>
 
         <a
-          href={issue.repository_url}
+          href={issue.repository.html_url}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block px-3 py-1 border border-purple-400 rounded-md  hover:bg-purple-400 hover:text-white hover:border-transparent h-fit"
