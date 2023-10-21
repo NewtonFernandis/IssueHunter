@@ -8,18 +8,21 @@ import { Issue } from './types/searchIssueResponse';
 import { githubApi } from './utils/api';
 import { useTheme } from './contexts/ThemeContext';
 
-
 function App() {
   const [issues, setIssues] = useState<Issue[] | undefined>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>('is:issue is:open');
-  const {darkMode} = useTheme();
+  const { darkMode } = useTheme();
 
   useEffect(() => {
     getIssues(currentPage);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, searchQuery]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
 
   const getIssues = async (page: number) => {
     try {
@@ -48,7 +51,7 @@ function App() {
   };
 
   return (
-    <div className={`${darkMode ? "dark" : "light"}`}>
+    <div className={`${darkMode ? 'dark' : 'light'}`}>
       <NavBar />
       <Filters setSearchQuery={setSearchQuery} />
       <div className="lg:ml-[365px] relative h-full mt-2 p-2 dark:bg-dark">
